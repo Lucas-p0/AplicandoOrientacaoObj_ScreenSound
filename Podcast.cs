@@ -11,7 +11,7 @@ class Podcast
     public string Nome { get; }
     public string? Host { get; }
     public Episodio? Episodio { get; set; }
-    //public int TotalEpisodios { get; set; }
+    public Convidado? Convidado { get; set; }
     public void ExibeDetalhesPodcast()
     {
         Console.WriteLine($"Olá você está no {Nome} eu sou o {Host} e nós temos o total de {TotalEpisodios} episodios");

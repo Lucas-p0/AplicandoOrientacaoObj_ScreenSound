@@ -51,9 +51,9 @@ Episodio episodio5 = new Episodio("Guerra", 5)
 };
 
 
-Podcast InteligenciaLTDA = new Podcast("Inteligencia LTDA", "Vilela")
-{
-};
+Convidado Nicolelis = new Convidado("Nicolelis", "Cientista");
+Podcast InteligenciaLTDA = new Podcast("Inteligencia LTDA", "Vilela");
+
 
 InteligenciaLTDA.AdicionaEpisodios(episodio1);
 InteligenciaLTDA.AdicionaEpisodios(episodio2);
