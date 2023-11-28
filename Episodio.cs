@@ -1,19 +1,20 @@
 class Episodio
 {
 
-    private List<Convidado> convidados = new List<Convidado>();
-    public Episodio(string? nome, int ordem)
+    private List<string> convidados = new();
+    public Episodio(string? nome, int ordem, int duracao)
     {
         Nome = nome;
-        this.ordem = ordem;
+        this.Ordem = ordem;
+        Duracao = duracao;
     }
 
+    public int Ordem { get; }
     public string? Nome { get; }
-    public int ordem { get; }
-    public string? Resumo { get; set; }
-    public int Duracao { get; set; }
+    public int Duracao { get; }
+    public string? Resumo => $"Episodio {Ordem}: {Nome} | Duração:({Duracao}min) - {string.Join(", ", convidados)}";
 
-    public void AdicionaConvidado(Convidado convidado)
+    public void AdicionarConvidados(string convidado)
     {
         convidados.Add(convidado);
     }
