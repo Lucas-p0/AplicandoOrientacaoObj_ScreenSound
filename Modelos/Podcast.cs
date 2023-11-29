@@ -1,3 +1,5 @@
+namespace ScreenSound.Modelos;
+
 class Podcast
 {
     private List<Episodio> episodios = new();
