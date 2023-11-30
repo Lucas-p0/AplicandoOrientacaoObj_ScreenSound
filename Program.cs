@@ -68,12 +68,16 @@ void RegistrarBanda()
     ExibindoTituloDaOpcao("Registro de bandas");
     Console.Write($"Digite o nome da banda que deseja registrar: ");
     string nomeDaBanda = Console.ReadLine()!;
-    Banda banda = new(nomeDaBanda);
+    Banda banda = new Banda(nomeDaBanda);
     bandasRegistrasdas.Add(nomeDaBanda, banda);
-    Console.WriteLine($"A banda {nomeDaBanda} foi registrada!");
-    Thread.Sleep(2000);
+    Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
+    Thread.Sleep(4000);
+    Console.Clear();
+    ExibirOpcoesDoMenu();
     ExibirOpcoesDoMenu();
 };
+
+
 
 void MostarBandasRegistradas()
 {
@@ -109,11 +113,12 @@ void AvaliarUmaBanda()
     String nomeDaBanda = Console.ReadLine()!;
     if (bandasRegistrasdas.ContainsKey(nomeDaBanda))
     {
+        Banda banda = bandasRegistrasdas[nomeDaBanda];
         Console.Write($"Qual a nota que a banda {nomeDaBanda} merece: ");
         int nota = int.Parse(Console.ReadLine()!);
-        bandasRegistrasdas[nomeDaBanda].Add(nota);
+        banda.AdicionarNota(nota);
         Console.WriteLine($"\nA nota {nota} foi registrada com sucesso para a banda {nomeDaBanda}");
-        Thread.Sleep(4000);
+        Thread.Sleep(2000);
         Console.Clear();
         ExibirOpcoesDoMenu();
     }
@@ -129,15 +134,18 @@ void AvaliarUmaBanda()
 void ExibeMediaDaBanda()
 {
     Console.Clear();
+    ExibindoTituloDaOpcao("Media da banda");
     Console.Write($"Digite o nome da banda para ver a média:");
     string nomeDaBanda = Console.ReadLine()!;
     if (bandasRegistrasdas.ContainsKey(nomeDaBanda))
     {
-        List<int> notasDaBanda = bandasRegistrasdas[nomeDaBanda];
 
 
-        Console.WriteLine($"A Media da banda {nomeDaBanda} é: {notasDaBanda.Average()}.");
+        Banda banda = bandasRegistrasdas[nomeDaBanda];
+        Console.WriteLine($"A Media da banda {nomeDaBanda} é: {banda.Media}.");
         Console.WriteLine($"Digite qualquer tecla para voltar ao menu principal");
+
+        //**ESPAÇO PARA FUNÇÃO**//
         Console.ReadKey();
         Console.Clear();
         ExibirOpcoesDoMenu();
@@ -153,6 +161,12 @@ void ExibeMediaDaBanda()
     ;
 
 };
+void RegristarAlbum(){
+    Console.Clear();
+    ExibindoTituloDaOpcao("Registro de álbum");
+    Console.WriteLine("");
+
+}
 
 mensagemDeBoasVindas();
 ExibirOpcoesDoMenu();

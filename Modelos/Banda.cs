@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace ScreenSound.Modelos
 {
     // Classe que representa uma banda musical
