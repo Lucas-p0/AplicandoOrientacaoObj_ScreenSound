@@ -1,13 +1,14 @@
-﻿using ScreenSound.Modelos;
+﻿using AplicandoOrientacaoObj_ScreenSound.Modelos;
+using ScreenSound.Modelos;
 
 Banda ira = new("Ira!");
-ira.AdicionarNota(10);
-ira.AdicionarNota(8);
-ira.AdicionarNota(6);
+ira.AdicionarNota(new Avaliacao(10));
+ira.AdicionarNota(new Avaliacao(8));
+ira.AdicionarNota(new Avaliacao(3));
 
 Banda oficinaG3 = new("Oficina G3");
-oficinaG3.AdicionarNota(8);
-oficinaG3.AdicionarNota(6);
+oficinaG3.AdicionarNota(new Avaliacao(10));
+oficinaG3.AdicionarNota(new Avaliacao(7));
 
 Dictionary<string, Banda> bandasRegistrasdas = new();
 bandasRegistrasdas.Add(ira.Nome, ira);
@@ -32,9 +33,10 @@ void ExibirOpcoesDoMenu()
     mensagemDeBoasVindas();
     Console.WriteLine($"\nBoas vindas ao Screen Sound");
     Console.WriteLine($"\nDigite 1 para registrar uma banda");
-    Console.WriteLine($"Digite 2 para mostrar todas as bandas");
+    Console.WriteLine($"Digite 2 para registrar o álbum de uma banda");
     Console.WriteLine($"Digite 3 para avaliar uma banda");
-    Console.WriteLine($"Digite 4 para exibir a média de uma banda");
+    Console.WriteLine($"Digite 4 para mostrar todas as bandas");
+    Console.WriteLine($"Digite 5 para exibir a média de uma banda");
     Console.WriteLine($"Digite 0 para sair");
 
     Console.Write($"\nDigite a sua opção:");
@@ -46,12 +48,15 @@ void ExibirOpcoesDoMenu()
             RegistrarBanda();
             break;
         case 2:
-            MostarBandasRegistradas();
+            RegristarAlbum();
             break;
         case 3:
             AvaliarUmaBanda();
             break;
         case 4:
+            MostarBandasRegistradas();
+            break;
+        case 5:
             ExibeMediaDaBanda();
             break;
         case 0:
@@ -115,9 +120,9 @@ void AvaliarUmaBanda()
     {
         Banda banda = bandasRegistrasdas[nomeDaBanda];
         Console.Write($"Qual a nota que a banda {nomeDaBanda} merece: ");
-        int nota = int.Parse(Console.ReadLine()!);
+        Avaliacao nota = Avaliacao.Parse(Console.ReadLine()!);
         banda.AdicionarNota(nota);
-        Console.WriteLine($"\nA nota {nota} foi registrada com sucesso para a banda {nomeDaBanda}");
+        Console.WriteLine($"\nA nota {nota.Nota} foi registrada com sucesso para a banda {nomeDaBanda}");
         Thread.Sleep(2000);
         Console.Clear();
         ExibirOpcoesDoMenu();
@@ -161,10 +166,32 @@ void ExibeMediaDaBanda()
     ;
 
 };
-void RegristarAlbum(){
+void RegristarAlbum()
+{
     Console.Clear();
     ExibindoTituloDaOpcao("Registro de álbum");
-    Console.WriteLine("");
+    Console.Write
+    ("Digite a banda cujo o álbum deseja registrar: ");
+    string nomeDaBanda = Console.ReadLine()!;
+    if (bandasRegistrasdas.ContainsKey(nomeDaBanda))
+    {
+        Console.Write("Agora digite o titulo do álbum: ");
+        string tituloAlbum = Console.ReadLine()!;
+        Banda banda = bandasRegistrasdas[nomeDaBanda];
+        Console.WriteLine($"O álgum {tituloAlbum} da banda {nomeDaBanda} foi registrado!");
+        Thread.Sleep(2500);
+        Console.Clear();
+        ExibirOpcoesDoMenu();
+    }
+    else
+    {
+        Console.WriteLine($"A banda {nomeDaBanda} não foi encontrada!");
+        Console.WriteLine($"\nDigite uma tecla para voltar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesDoMenu();
+    }
+
 
 }
 

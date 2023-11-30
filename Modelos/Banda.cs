@@ -1,19 +1,28 @@
+using AplicandoOrientacaoObj_ScreenSound.Modelos;
+
 namespace ScreenSound.Modelos
 {
     // Classe que representa uma banda musical
-    class Banda
+    internal class Banda
     {
         // Lista de álbuns pertencentes à banda
         private List<Album> albums = new();
 
         // Lista de notas atribuídas à banda
-        private List<int> notas = new();
+        private List<Avaliacao> notas = new();
 
         // Propriedade somente leitura que armazena o nome da banda
         public string Nome { get; }
 
         // Propriedade calculada que retorna a média das notas atribuídas à banda
-        public double Media => notas.Average();
+        public double Media
+        {
+            get
+            {
+                if (notas.Count == 0) return 0;
+                else return notas.Average(a => a.Nota);
+            }
+        }
 
         // Construtor da classe Banda que recebe o nome como parâmetro
         public Banda(string nome)
@@ -40,7 +49,7 @@ namespace ScreenSound.Modelos
         }
 
         // Método para adicionar uma nota à lista de notas da banda
-        public void AdicionarNota(int nota)
+        public void AdicionarNota(Avaliacao nota)
         {
             notas.Add(nota);
         }
