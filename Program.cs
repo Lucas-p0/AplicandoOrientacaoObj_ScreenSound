@@ -1,5 +1,8 @@
-﻿using AplicandoOrientacaoObj_ScreenSound.Modelos;
+﻿using AplicandoOrientacaoObj_ScreenSound.Menus;
+using AplicandoOrientacaoObj_ScreenSound.Modelos;
 using ScreenSound.Modelos;
+
+
 
 Banda ira = new("Ira!");
 ira.AdicionarNota(new Avaliacao(10));
@@ -57,7 +60,9 @@ void ExibirOpcoesDoMenu()
             MostarBandasRegistradas();
             break;
         case 5:
-            ExibeMediaDaBanda();
+            MenuExibirDetalhes menu = new();
+            menu.Executar(bandasRegistrasdas);
+            ExibirOpcoesDoMenu();
             break;
         case 0:
             Console.WriteLine($"Acabou!!!");
@@ -81,9 +86,6 @@ void RegistrarBanda()
     ExibirOpcoesDoMenu();
     ExibirOpcoesDoMenu();
 };
-
-
-
 void MostarBandasRegistradas()
 {
     Console.Clear();
@@ -115,7 +117,7 @@ void AvaliarUmaBanda()
     Console.Clear();
     ExibindoTituloDaOpcao("Avaliar Banda");
     Console.Write("Digite o nome que deseja avaliar: ");
-    String nomeDaBanda = Console.ReadLine()!;
+    string nomeDaBanda = Console.ReadLine()!;
     if (bandasRegistrasdas.ContainsKey(nomeDaBanda))
     {
         Banda banda = bandasRegistrasdas[nomeDaBanda];
@@ -136,36 +138,7 @@ void AvaliarUmaBanda()
         ExibirOpcoesDoMenu();
     };
 };
-void ExibeMediaDaBanda()
-{
-    Console.Clear();
-    ExibindoTituloDaOpcao("Media da banda");
-    Console.Write($"Digite o nome da banda para ver a média:");
-    string nomeDaBanda = Console.ReadLine()!;
-    if (bandasRegistrasdas.ContainsKey(nomeDaBanda))
-    {
 
-
-        Banda banda = bandasRegistrasdas[nomeDaBanda];
-        Console.WriteLine($"A Media da banda {nomeDaBanda} é: {banda.Media}.");
-        Console.WriteLine($"Digite qualquer tecla para voltar ao menu principal");
-
-        //**ESPAÇO PARA FUNÇÃO**//
-        Console.ReadKey();
-        Console.Clear();
-        ExibirOpcoesDoMenu();
-    }
-    else
-    {
-        Console.WriteLine($"A banda {nomeDaBanda} não foi encontrada!");
-        Console.WriteLine($"\nDigite uma tecla para voltar ao menu principal");
-        Console.ReadKey();
-        Console.Clear();
-        ExibirOpcoesDoMenu();
-    }
-    ;
-
-};
 void RegristarAlbum()
 {
     Console.Clear();
@@ -197,6 +170,8 @@ void RegristarAlbum()
 
 mensagemDeBoasVindas();
 ExibirOpcoesDoMenu();
+
+
 
 
 
