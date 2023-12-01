@@ -13,7 +13,7 @@ internal class MenuAvaliarBanda : Menu
         //Senão, voltar ao menu principal
         Console.Clear();
         ExibindoTituloDaOpcao("Avaliar Banda");
-        Console.Write("Digite o nome que deseja avaliar: ");
+        Console.Write("Digite o nome da banda que deseja avaliar: ");
         string nomeDaBanda = Console.ReadLine()!;
         if (bandasRegistradas.ContainsKey(nomeDaBanda))
         {

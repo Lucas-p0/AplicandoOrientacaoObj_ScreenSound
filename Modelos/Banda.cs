@@ -3,26 +3,28 @@ using AplicandoOrientacaoObj_ScreenSound.Modelos;
 namespace ScreenSound.Modelos
 {
     // Classe que representa uma banda musical
-    internal class Banda
+    internal class Banda : IAvaliavel
     {
         // Lista de álbuns pertencentes à banda
-        private List<Album> albums = new();
+        public List<Album> albuns = new();
 
         // Lista de notas atribuídas à banda
-        private List<Avaliacao> notas = new();
+        public List<Avaliacao> notas = new();
 
         // Propriedade somente leitura que armazena o nome da banda
         public string Nome { get; }
 
+        public double Media => throw new NotImplementedException();
+
         // Propriedade calculada que retorna a média das notas atribuídas à banda
-        public double Media
-        {
-            get
-            {
-                if (notas.Count == 0) return 0;
-                else return notas.Average(a => a.Nota);
-            }
-        }
+        // public double Media
+        // {
+        //     get
+        //     {
+        //         if (notas.Count == 0) return 0;
+        //         else return notas.Average(a => a.Nota);
+        //     }
+        // }
 
         // Construtor da classe Banda que recebe o nome como parâmetro
         public Banda(string nome)
@@ -33,7 +35,7 @@ namespace ScreenSound.Modelos
         // Método para adicionar um álbum à lista de álbuns da banda
         public void AdicionarAlbum(Album album)
         {
-            albums.Add(album);
+            albuns.Add(album);
         }
 
         // Método para exibir a discografia da banda na console
@@ -42,7 +44,7 @@ namespace ScreenSound.Modelos
             Console.WriteLine($"Discografia da banda: {Nome}");
 
             // Loop para iterar sobre cada álbum e exibir informações
-            foreach (Album album in albums)
+            foreach (Album album in albuns)
             {
                 Console.WriteLine($"Álbum: {album.Nome} ({album.DuracaoTotal})");
             }
