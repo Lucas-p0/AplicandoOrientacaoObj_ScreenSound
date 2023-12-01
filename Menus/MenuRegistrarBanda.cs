@@ -10,7 +10,7 @@ internal class MenuRegistrarBanda : Menu
         ExibindoTituloDaOpcao("Registro de bandas");
         Console.Write($"Digite o nome da banda que deseja registrar: ");
         string nomeDaBanda = Console.ReadLine()!;
-        Banda banda = new Banda(nomeDaBanda);
+        Banda banda = new(nomeDaBanda);
         bandasRegistradas.Add(nomeDaBanda, banda);
         Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
         Thread.Sleep(2500);

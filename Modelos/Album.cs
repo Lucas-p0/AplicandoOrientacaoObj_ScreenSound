@@ -42,4 +42,9 @@ internal class Album : IAvaliavel
     {
         notas.Add(nota);
     }
+
+    public static implicit operator Album(Banda v)
+    {
+        throw new NotImplementedException();
+    }
 }

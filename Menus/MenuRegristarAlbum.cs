@@ -7,8 +7,7 @@ internal class MenuRegristarAlbum : Menu
     {
         base.Executar(bandasRegistradas);
         ExibindoTituloDaOpcao("Registro de álbum");
-        Console.Write
-        ("Digite a banda cujo o álbum deseja registrar: ");
+        Console.Write("Digite a banda cujo o álbum deseja registrar: ");
         string nomeDaBanda = Console.ReadLine()!;
         if (bandasRegistradas.ContainsKey(nomeDaBanda))
         {

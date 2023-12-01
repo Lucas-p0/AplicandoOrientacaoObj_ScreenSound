@@ -18,12 +18,9 @@ internal class MenuExibirDetalhes : Menu
             Console.WriteLine($"\nA média da banda: {nomeDaBanda} é {banda.Media}");
 
             //Espaço para Função
-
             Console.Write("Digite um tecla para voltar ao menu principal");
             Console.ReadLine();
             Console.Clear();
-
-
         }
         else
         {

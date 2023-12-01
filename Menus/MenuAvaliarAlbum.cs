@@ -13,7 +13,6 @@ internal class MenuAvaliarAlbum : Menu
         string nomeDaBanda = Console.ReadLine()!;
         if (bandasRegistradas.ContainsKey(nomeDaBanda))
         {
-
             Banda banda = bandasRegistradas[nomeDaBanda];
             Console.Write("Agora digite o titulo do álbum: ");
             string tituloAlbum = Console.ReadLine()!;
@@ -34,8 +33,6 @@ internal class MenuAvaliarAlbum : Menu
                 Console.ReadKey();
                 Console.Clear();
             };
-
-
         }
         else
         {
