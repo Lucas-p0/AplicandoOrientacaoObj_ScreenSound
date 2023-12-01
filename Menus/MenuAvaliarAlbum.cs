@@ -9,7 +9,7 @@ internal class MenuAvaliarAlbum : Menu
     {
         base.Executar(bandasRegistradas);
         ExibindoTituloDaOpcao("Avaliar Álbum");
-        Console.Write("Digite o nome que deseja avaliar: ");
+        Console.Write("Digite o nome da banda que deseja avaliar o álbum: ");
         string nomeDaBanda = Console.ReadLine()!;
         if (bandasRegistradas.ContainsKey(nomeDaBanda))
         {

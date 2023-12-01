@@ -22,7 +22,8 @@ Dictionary<int, Menu> opcoes = new()
     { 2, new MenuRegristarAlbum() },
     { 3, new MenuMostarBandasRegistrada() },
     { 4, new MenuAvaliarBanda() },
-    { 5, new MenuExibirDetalhes() },
+    { 5, new MenuAvaliarAlbum() },
+    { 6, new MenuExibirDetalhes() },
     { 0, new MenuSair() }
 };
 void mensagemDeBoasVindas()
@@ -47,7 +48,8 @@ void ExibirOpcoesDoMenu()
     Console.WriteLine($"Digite 2 para registrar o álbum de uma banda");
     Console.WriteLine($"Digite 3 para mostrar todas as bandas");
     Console.WriteLine($"Digite 4 para avaliar uma banda");
-    Console.WriteLine($"Digite 5 para exibir detalhes de uma banda");
+    Console.WriteLine($"Digite 5 para avaliar um álbum");
+    Console.WriteLine($"Digite 6 para exibir detalhes de uma banda");
     Console.WriteLine($"Digite 0 para sair");
 
     Console.Write($"\nDigite a sua opção:");
