@@ -1,9 +1,12 @@
-namespace AplicandoOrientacaoObj_ScreenSound.Menus;
-namespace AplicandoOrientacaoObj_ScreenSound.Modelos;
+using AplicandoOrientacaoObj_ScreenSound.Modelos;
+using ScreenSound.Modelos;
 
-internal class MenuAvaliarBanda
+namespace AplicandoOrientacaoObj_ScreenSound.Menus;
+
+
+internal class MenuAvaliarBanda : Menu
 {
-    public void Executar(Dictionary<string, Banda> bandasRegistradas)
+    internal override void Executar(Dictionary<string, Banda> bandasRegistradas)
     {
         //Digite a banda que deseja avaliar
         //Se a banda exstir nodicionario >> atribuir uma nota
@@ -12,9 +15,9 @@ internal class MenuAvaliarBanda
         ExibindoTituloDaOpcao("Avaliar Banda");
         Console.Write("Digite o nome que deseja avaliar: ");
         string nomeDaBanda = Console.ReadLine()!;
-        if (bandasRegistrasdas.ContainsKey(nomeDaBanda))
+        if (bandasRegistradas.ContainsKey(nomeDaBanda))
         {
-            Banda banda = bandasRegistrasdas[nomeDaBanda];
+            Banda banda = bandasRegistradas[nomeDaBanda];
             Console.Write($"Qual a nota que a banda {nomeDaBanda} merece: ");
             Avaliacao nota = Avaliacao.Parse(Console.ReadLine()!);
             banda.AdicionarNota(nota);
