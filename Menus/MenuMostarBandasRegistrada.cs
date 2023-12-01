@@ -6,7 +6,7 @@ internal class MenuMostarBandasRegistrada : Menu
 {
     internal override void Executar(Dictionary<string, Banda> bandasRegistradas)
     {
-        Console.Clear();
+        base.Executar(bandasRegistradas);
         ExibindoTituloDaOpcao("Exibindo bandas registradas:");
 
         foreach (string banda in bandasRegistradas.Keys)

@@ -8,7 +8,7 @@ internal class MenuExibirDetalhes : Menu
 
     internal override void Executar(Dictionary<string, Banda> bandasRegistradas)
     {
-        Console.Clear();
+        base.Executar(bandasRegistradas);
         ExibindoTituloDaOpcao("Exibir detalhe da banda");
         Console.Write("Digite o nome da banda que deseja conhecer melhor: ");
         string nomeDaBanda = Console.ReadLine()!;
