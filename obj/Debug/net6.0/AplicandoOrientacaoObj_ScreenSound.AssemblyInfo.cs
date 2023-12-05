@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AplicandoOrientacaoObj_ScreenSound")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba9bf65f1e0704c051fc90620f84e24dd90dc4f4")]
 [assembly: System.Reflection.AssemblyProductAttribute("AplicandoOrientacaoObj_ScreenSound")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AplicandoOrientacaoObj_ScreenSound")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -6,12 +6,18 @@ internal class Banda : IAvaliavel
     private List<Album> albuns = new List<Album>();
     private List<Avaliacao> notas = new List<Avaliacao>();
 
+    //Propiedades
     public Banda(string nome)
     {
         Nome = nome;
     }
-
     public string Nome { get; }
+    
+    public int MyProperty { get; set; }
+
+
+
+    //Metodos
     public double Media
     {
         get
