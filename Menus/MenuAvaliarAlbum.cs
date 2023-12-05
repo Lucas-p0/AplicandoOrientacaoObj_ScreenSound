@@ -5,7 +5,7 @@ namespace AplicandoOrientacaoObj_ScreenSound.Menus;
 
 internal class MenuAvaliarAlbum : Menu
 {
-    internal override void Executar(Dictionary<string, Banda> bandasRegistradas)
+    public override void Executar(Dictionary<string, Banda> bandasRegistradas)
     {
         base.Executar(bandasRegistradas);
         ExibindoTituloDaOpcao("Avaliar Álbum");
@@ -16,9 +16,10 @@ internal class MenuAvaliarAlbum : Menu
             Banda banda = bandasRegistradas[nomeDaBanda];
             Console.Write("Agora digite o titulo do álbum: ");
             string tituloAlbum = Console.ReadLine()!;
-            if (banda.albuns.Any(a => a.Nome.Equals(tituloAlbum)))
+
+            if (banda.Albuns.Any(a => a.Nome.Equals(tituloAlbum)))
             {
-                Album album = banda.albuns.First(a => a.Nome.Equals(tituloAlbum));
+                Album album = banda.Albuns.First(a => a.Nome.Equals(tituloAlbum));
                 Console.Write($"Qual a nota que a banda {tituloAlbum} merece: ");
                 Avaliacao nota = Avaliacao.Parse(Console.ReadLine()!);
                 album.AdicionarNota(nota);

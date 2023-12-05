@@ -1,9 +1,10 @@
 using ScreenSound.Modelos;
-
 namespace AplicandoOrientacaoObj_ScreenSound.Menus;
+
+
 internal class MenuRegristarAlbum : Menu
 {
-    internal override void Executar(Dictionary<string, Banda> bandasRegistradas)
+    public override void Executar(Dictionary<string, Banda> bandasRegistradas)
     {
         base.Executar(bandasRegistradas);
         ExibindoTituloDaOpcao("Registro de álbum");
@@ -11,11 +12,12 @@ internal class MenuRegristarAlbum : Menu
         string nomeDaBanda = Console.ReadLine()!;
         if (bandasRegistradas.ContainsKey(nomeDaBanda))
         {
-            Console.Write("Agora digite o titulo do álbum: ");
+            Console.Write("Agora digite o título do álbum: ");
             string tituloAlbum = Console.ReadLine()!;
             Banda banda = bandasRegistradas[nomeDaBanda];
-            Console.WriteLine($"O álgum {tituloAlbum} da banda {nomeDaBanda} foi registrado!");
-            Thread.Sleep(2500);
+            banda.AdicionarAlbum(new Album(tituloAlbum));
+            Console.WriteLine($"O álbum {tituloAlbum} de {nomeDaBanda} foi registrado com sucesso!");
+            Thread.Sleep(4000);
             Console.Clear();
         }
         else

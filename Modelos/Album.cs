@@ -35,7 +35,7 @@ internal class Album : IAvaliavel
         {
             Console.WriteLine($"Musica: {musica.Nome}");
         }
-        System.Console.WriteLine($"Para ouvir esse álbum inteiro você precisa de {DuracaoTotal} segundos");
+        Console.WriteLine($"Para ouvir esse álbum inteiro você precisa de {DuracaoTotal} segundos");
     }
 
     public void AdicionarNota(Avaliacao nota)
@@ -43,8 +43,5 @@ internal class Album : IAvaliavel
         notas.Add(nota);
     }
 
-    public static implicit operator Album(Banda v)
-    {
-        throw new NotImplementedException();
-    }
+
 }

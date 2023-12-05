@@ -4,7 +4,7 @@ namespace AplicandoOrientacaoObj_ScreenSound.Menus;
 
 internal class MenuRegistrarBanda : Menu
 {
-    internal override void Executar(Dictionary<string, Banda> bandasRegistradas)
+    public override void Executar(Dictionary<string, Banda> bandasRegistradas)
     {
         base.Executar(bandasRegistradas);
         ExibindoTituloDaOpcao("Registro de bandas");

@@ -6,7 +6,7 @@ namespace AplicandoOrientacaoObj_ScreenSound.Menus;
 internal class MenuExibirDetalhes : Menu
 {
 
-    internal override void Executar(Dictionary<string, Banda> bandasRegistradas)
+    public override void Executar(Dictionary<string, Banda> bandasRegistradas)
     {
         base.Executar(bandasRegistradas);
         ExibindoTituloDaOpcao("Exibir detalhe da banda");

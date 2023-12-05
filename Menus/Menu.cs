@@ -2,7 +2,7 @@ using ScreenSound.Modelos;
 
 namespace AplicandoOrientacaoObj_ScreenSound.Menus;
 
-public class Menu
+internal class Menu
 {
     public virtual void ExibindoTituloDaOpcao(string titulo)
     {
@@ -12,7 +12,7 @@ public class Menu
         Console.WriteLine(titulo);
         Console.WriteLine(asteriscos + "\n");
     }
-    internal virtual void Executar(Dictionary<string, Banda> bandasRegistradas)
+    public virtual void Executar(Dictionary<string, Banda> bandasRegistradas)
     {
         Console.Clear();
     }
