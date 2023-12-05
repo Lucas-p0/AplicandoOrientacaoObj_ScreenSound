@@ -1,15 +1,6 @@
 ﻿using AplicandoOrientacaoObj_ScreenSound.Menus;
 using AplicandoOrientacaoObj_ScreenSound.Modelos;
 using ScreenSound.Modelos;
-using OpenAI_API;
-
-var client = new OpenAIAPI("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");
-var chat = client.Chat.CreateConversation();
-chat.AppendSystemMessage("Resuma a banda Oficina G3 em 1 parágrafo. Adote um estilo informal.");
-string response = await chat.GetResponseFromChatbotAsync();
-Console.WriteLine(response);
-
-
 
 
 Banda ira = new("Ira!");

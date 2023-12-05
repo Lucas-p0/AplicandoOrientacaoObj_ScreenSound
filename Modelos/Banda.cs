@@ -12,8 +12,8 @@ internal class Banda : IAvaliavel
         Nome = nome;
     }
     public string Nome { get; }
-    
-    public int MyProperty { get; set; }
+
+    public string? Resumo { get; set; }
 
 
 
